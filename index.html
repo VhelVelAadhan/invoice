@@ -408,8 +408,7 @@ html, body { height:100%; font-family:var(--font-body); background:var(--bg); co
 
 <script>
 let items = [
-  {desc:'AR/VR Application Development & Consulting', sub:'Project Phase 1 — Jan 2026 to Mar 2026', rate:'85000', qty:1},
-  {desc:'Equipment & Hardware Procurement (Reimbursable)', sub:'Meta Quest 3 × 2 units | Import handling charges', rate:'62000', qty:1}
+  {desc:'Lorem ipsum service', sub:'Sample description', rate:'1000', qty:1}
 ];
 let currency = '₹';
 let zoomLevel = 1;
@@ -744,48 +743,62 @@ function resetForm() {
 }
 
 function initDefaults() {
-  document.getElementById('f-company').value = 'Selvendran.NKS';
-  document.getElementById('f-tagline').value  = 'Senior AR VR Developer';
-  document.getElementById('f-address').value  = 'A5, Shivakumar Complex, Velachery, Chennai';
-  document.getElementById('f-taxid').value    = 'JAMPS9458F';
-  document.getElementById('f-email').value    = 'vendhanz90@gmail.com';
-  document.getElementById('f-phone').value    = '+91 8015633159';
-  document.getElementById('f-invno').value    = 'PA-1001';
-  document.getElementById('f-date').value     = new Date().toISOString().split('T')[0];
-  document.getElementById('f-due').value      = '3';
-  document.getElementById('b-company').value  = 'Elephant Brain Lab srl';
-  document.getElementById('b-address').value  = 'Piazza Euclide, 2, 00197 – Rome, Italy';
-  document.getElementById('b-vat').value      = 'IT18060351006';
-  document.getElementById('b-gst').value      = '';
-  document.getElementById('b-contact').value  = 'Dr. Marco Rotonda - CEO';
-  document.getElementById('b-email').value    = 'marco.rotonda@elephantbrainlab.com';
-  document.getElementById('p-bank').value     = 'HDFC Bank';
-  document.getElementById('p-holder').value   = 'Selvendran Suppaiya';
-  document.getElementById('p-accno').value    = '50100481885463';
-  document.getElementById('p-acctype').value  = 'Savings Account';
-  document.getElementById('p-ifsc').value     = 'HDFC0004166';
-  document.getElementById('p-branch').value   = 'RAMANUJAN IT CITY';
-  document.getElementById('p-swift').value    = '';
-  document.getElementById('p-upi').value      = '';
-  document.getElementById('f-terms').value    = 'Payment due within 3 days of invoice date. Please include the invoice number as the payment reference. Thank you for your business.';
-  document.getElementById('f-notes').value    = '';
-  document.getElementById('vatPct').value     = '0';
-  document.getElementById('gstPct').value     = '0';
-  document.getElementById('paidAmt').value    = '0';
-  document.querySelectorAll('.cur-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector('[data-sym="₹"]').classList.add('active');
-  currency = '₹';
-  logoDataURL = null;
-  signatureDataURL = null;
-  applyUploadPreview('logoPreviewImg', 'logoPlaceholder', 'logoClear', null);
-  applyUploadPreview('signaturePreviewImg', 'signaturePlaceholder', 'signatureClear', null);
-  items = [
-    {desc:'AR/VR Application Development & Consulting', sub:'Project Phase 1 — Jan 2026 to Mar 2026', rate:'85000', qty:1},
-    {desc:'Equipment & Hardware Procurement (Reimbursable)', sub:'Meta Quest 3 × 2 units | Import handling charges', rate:'62000', qty:1}
-  ];
-  buildItemRows();
-  render();
+document.getElementById('f-company').value = 'Lorem Ipsum Pvt Ltd';
+document.getElementById('f-tagline').value  = 'Professional Services';
+document.getElementById('f-address').value  = '123 Lorem Street, Ipsum City, Country';
+document.getElementById('f-taxid').value    = 'XXXX1234X';
+document.getElementById('f-email').value    = '[example@email.com](mailto:example@email.com)';
+document.getElementById('f-phone').value    = '+00 0000000000';
+
+document.getElementById('f-invno').value    = 'INV-0001';
+document.getElementById('f-date').value     = new Date().toISOString().split('T')[0];
+document.getElementById('f-due').value      = '7';
+
+document.getElementById('b-company').value  = 'Client Company Ltd';
+document.getElementById('b-address').value  = '456 Dummy Avenue, Sample City';
+document.getElementById('b-vat').value      = 'XXXXXXXX';
+document.getElementById('b-gst').value      = 'XXXXXXXX';
+document.getElementById('b-contact').value  = 'John Doe';
+document.getElementById('b-email').value    = '[client@email.com](mailto:client@email.com)';
+
+document.getElementById('p-bank').value     = 'Demo Bank';
+document.getElementById('p-holder').value   = 'Account Holder';
+document.getElementById('p-accno').value    = 'XXXXXXXXXXXX';
+document.getElementById('p-acctype').value  = 'Savings';
+document.getElementById('p-ifsc').value     = 'XXXX0000000';
+document.getElementById('p-branch').value   = 'Main Branch';
+document.getElementById('p-swift').value    = 'XXXXXXXX';
+document.getElementById('p-upi').value      = 'xxxx@upi';
+
+document.getElementById('f-terms').value =
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+document.getElementById('f-notes').value =
+'Lorem ipsum dolor sit amet.';
+
+document.getElementById('vatPct').value     = '0';
+document.getElementById('gstPct').value     = '0';
+document.getElementById('paidAmt').value    = '0';
+
+document.querySelectorAll('.cur-btn').forEach(b=>b.classList.remove('active'));
+document.querySelector('[data-sym="₹"]').classList.add('active');
+
+currency = '₹';
+logoDataURL = null;
+signatureDataURL = null;
+
+applyUploadPreview('logoPreviewImg', 'logoPlaceholder', 'logoClear', null);
+applyUploadPreview('signaturePreviewImg', 'signaturePlaceholder', 'signatureClear', null);
+
+items = [
+{desc:'Lorem ipsum service', sub:'Dolor sit amet', rate:'1000', qty:1},
+{desc:'Sample product', sub:'Consectetur adipiscing', rate:'500', qty:2}
+];
+
+buildItemRows();
+render();
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!loadState()) initDefaults();
